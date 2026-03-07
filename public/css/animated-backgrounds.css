@@ -1,0 +1,360 @@
+/* Animated Backgrounds for Product Pages */
+
+/* =============================================
+   Floating Shapes & Elements Animations
+   ============================================= */
+
+@keyframes float1 {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) scale(1);
+        opacity: 0.3;
+    }
+    25% {
+        transform: translateY(-20px) translateX(15px) scale(1.05);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-40px) translateX(-10px) scale(0.95);
+        opacity: 0.35;
+    }
+    75% {
+        transform: translateY(-20px) translateX(20px) scale(1.02);
+        opacity: 0.45;
+    }
+}
+
+@keyframes float2 {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) scale(1);
+        opacity: 0.25;
+    }
+    33% {
+        transform: translateY(-30px) translateX(-20px) scale(1.08);
+        opacity: 0.4;
+    }
+    66% {
+        transform: translateY(-50px) translateX(25px) scale(0.92);
+        opacity: 0.3;
+    }
+}
+
+@keyframes float3 {
+    0%, 100% {
+        transform: translateY(0px) scale(1) rotate(0deg);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translateY(-35px) scale(1.1) rotate(180deg);
+        opacity: 0.4;
+    }
+}
+
+@keyframes rotate360 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+/* =============================================
+   Background Shape Elements
+   ============================================= */
+
+.animated-bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.animated-bg-shape {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.animated-bg-shape::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+}
+
+/* Shape 1 - Top Left */
+.bg-shape-1 {
+    width: 280px;
+    height: 280px;
+    top: -60px;
+    left: -80px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 94, 20, 0.15), rgba(255, 94, 20, 0) 60%);
+    animation: float1 15s ease-in-out infinite;
+    box-shadow: 0 0 60px rgba(255, 94, 20, 0.2);
+}
+
+/* Shape 2 - Top Right */
+.bg-shape-2 {
+    width: 320px;
+    height: 320px;
+    top: -40px;
+    right: -100px;
+    background: radial-gradient(circle at 30% 30%, rgba(53, 90, 167, 0.12), rgba(53, 90, 167, 0) 65%);
+    animation: float2 18s ease-in-out infinite;
+    animation-delay: 2s;
+    box-shadow: 0 0 80px rgba(53, 90, 167, 0.15);
+}
+
+/* Shape 3 - Middle Left */
+.bg-shape-3 {
+    width: 240px;
+    height: 240px;
+    top: 35%;
+    left: -60px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 144, 107, 0.1), rgba(255, 144, 107, 0) 70%);
+    animation: float3 20s ease-in-out infinite;
+    animation-delay: 4s;
+    box-shadow: 0 0 50px rgba(255, 144, 107, 0.15);
+}
+
+/* Shape 4 - Bottom Right */
+.bg-shape-4 {
+    width: 300px;
+    height: 300px;
+    bottom: -80px;
+    right: -50px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 205, 86, 0.08), rgba(255, 205, 86, 0) 65%);
+    animation: float1 16s ease-in-out infinite;
+    animation-delay: 3s;
+    direction: rtl;
+    box-shadow: 0 0 70px rgba(255, 205, 86, 0.12);
+}
+
+/* Shape 5 - Bottom Left */
+.bg-shape-5 {
+    width: 250px;
+    height: 250px;
+    bottom: -40px;
+    left: 5%;
+    background: radial-gradient(circle at 30% 30%, rgba(99, 135, 255, 0.1), rgba(99, 135, 255, 0) 70%);
+    animation: float2 22s ease-in-out infinite;
+    animation-delay: 6s;
+    box-shadow: 0 0 60px rgba(99, 135, 255, 0.12);
+}
+
+/* Shape 6 - Center */
+.bg-shape-6 {
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    background: radial-gradient(circle at 30% 30%, rgba(255, 94, 20, 0.08), rgba(255, 94, 20, 0) 60%);
+    animation: pulse 5s ease-in-out infinite;
+    animation-delay: 1s;
+    box-shadow: 0 0 50px rgba(255, 94, 20, 0.1);
+}
+
+/* =============================================
+   Animated Gradient Background
+   ============================================= */
+
+.animated-gradient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #ff5e14, #ff7d36, #3a63b6, #ff5e14);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* =============================================
+   Page Content Wrapper (with higher z-index)
+   ============================================= */
+
+.page-content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* =============================================
+   Category Detail Section Enhancement
+   ============================================= */
+
+.category-detail-section {
+    position: relative;
+}
+
+.category-detail-section::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 94, 20, 0.04) 0%, transparent 40%, rgba(53, 90, 167, 0.04) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* =============================================
+   Geometric Pattern Animations
+   ============================================= */
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.category-summary {
+    animation: slideInLeft 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+.category-detail-section .category-nav-widget {
+    animation: slideInLeft 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+.category-product-card {
+    animation: slideInRight 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.category-product-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.category-product-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.category-product-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* =============================================
+   Enhanced Hover Effects
+   ============================================= */
+
+.category-product-card {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-product-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+    transition: left 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+}
+
+.category-product-card:hover::before {
+    left: 100%;
+}
+
+.category-product-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 32px 64px rgba(255, 94, 20, 0.2),
+                0 0 40px rgba(255, 94, 20, 0.1);
+}
+
+/* =============================================
+   Responsive Adjustments
+   ============================================= */
+
+@media (max-width: 768px) {
+    .animated-bg-container {
+        display: none;
+    }
+
+    .animated-gradient-bg {
+        opacity: 0.02;
+    }
+
+    .category-detail-section::before {
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 576px) {
+    .category-summary {
+        animation: slideInLeft 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+    }
+
+    .category-product-card {
+        animation: slideInRight 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+}
+
+/* =============================================
+   Scrollbar Customization
+   ============================================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 94, 20, 0.4);
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 94, 20, 0.7);
+}

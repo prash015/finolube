@@ -1,0 +1,102 @@
+/* Products dropdown style override to match provided reference */
+.main-header .main-menu .navigation > li:last-child {
+  margin-right: 0;
+}
+
+.main-header .main-menu .navigation > li:not(:last-child)::after {
+  content: "|";
+  position: absolute;
+  right: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff3c1f;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.main-header .main-menu .navigation > li.products-menu > ul {
+  width: 262px;
+  padding: 6px 0;
+  max-height: min(72vh, 560px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #f1f1f1;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+}
+
+.main-header .main-menu .navigation > li.products-menu > ul > li {
+  border-bottom: 0;
+}
+
+.main-header .main-menu .navigation > li.products-menu > ul > li > a {
+  padding: 9px 22px;
+  color: #3f444a;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+  text-transform: none;
+}
+
+.main-header .main-menu .navigation > li.products-menu > ul > li > a:before {
+  display: none;
+}
+
+.main-header .main-menu .navigation > li.products-menu > ul > li:hover > a {
+  padding-left: 22px;
+  color: #3f444a;
+  background: #e9e9e9;
+}
+
+/* Use the provided Finolube logo image without distorting layout */
+.main-header .header-upper .logo-box .logo img {
+  width: 255px;
+  max-width: 100%;
+  height: auto;
+}
+
+.main-header .sticky-header .logo img {
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+}
+
+.main-header .mobile-menu .nav-logo img {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+}
+
+.main-footer .logo-widget .logo img {
+  width: 210px;
+  max-width: 100%;
+  height: auto;
+}
+
+@media only screen and (min-width: 1024px) {
+  .main-header .header-upper .logo-box {
+    position: relative;
+    left: clamp(-220px, calc(262.5px - 25vw), -20px) !important;
+    margin-left: 0 !important;
+  }
+
+  .main-header .sticky-header .logo {
+    position: relative;
+    left: clamp(-220px, calc(262.5px - 25vw), -20px) !important;
+    margin-left: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .main-header .header-upper .logo-box .logo img {
+    width: 220px;
+  }
+
+  .main-header .sticky-header .logo img {
+    width: 170px;
+  }
+
+  .main-footer .logo-widget .logo img {
+    width: 190px;
+  }
+}

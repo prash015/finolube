@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Finolube | Global Presence</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link href="css/custom-nav.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+<!-- Leaflet Map CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<style>
+	/* Hero Banner Styles */
+    .hero-banner-section {
+        position: relative;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    .hero-banner-section .animated-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(18, 6, 0, 0.5) 0%, rgba(242, 73, 15, 0.2) 100%);
+        animation: overlayPulse 8s ease-in-out infinite;
+        z-index: 1;
+    }
+    
+    .hero-banner-section .auto-container {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+    }
+    
+    .hero-banner-title {
+        font-size: 60px;
+        font-weight: 700;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        margin-top: 30px;
+        animation: slideInDown 1s ease-out;
+    }
+    
+    .hero-banner-subtitle {
+        font-size: 24px;
+        color: rgba(255, 255, 255, 0.9);
+        margin-top: 20px;
+        font-weight: 300;
+        animation: fadeIn 1.5s ease-out;
+    }
+    
+    @keyframes overlayPulse {
+        0%, 100% { opacity: 0.7; }
+        50% { opacity: 0.5; }
+    }
+    
+    @keyframes slideInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    /* India Presence Section */
+    .india-presence-section {
+        position: relative;
+        padding: 100px 0;
+        background: #ffffff;
+    }
+    
+    .pattern-layer-india {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        background-repeat: repeat;
+        opacity: 0.05;
+        z-index: 0;
+    }
+    
+    .india-presence-section .auto-container {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .india-map-container {
+        margin-top: 60px;
+    }
+    
+    .india-map-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .india-leaflet-map {
+        width: 100%;
+        height: 650px;
+        border-radius: 0;
+        box-shadow: none;
+        z-index: 1;
+    }
+    
+    .india-stats {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding-left: 40px;
+    }
+    
+    .stat-item {
+        position: relative;
+        padding-left: 60px;
+    }
+    
+    .stat-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #f2490f 0%, #ff6b35 100%);
+        border-radius: 10px;
+        opacity: 0.8;
+        animation: pulse-box 2s ease-in-out infinite;
+    }
+    
+    .stat-item-1::before { animation-delay: 0s; }
+    .stat-item-2::before { animation-delay: 0.4s; }
+    .stat-item-3::before { animation-delay: 0.8s; }
+    
+    .stat-number {
+        font-size: 48px;
+        font-weight: 700;
+        color: #f2490f;
+        line-height: 1;
+    }
+    
+    .stat-label {
+        font-size: 18px;
+        font-weight: 600;
+        color: #120600;
+        margin-top: 8px;
+    }
+    
+    .stat-description {
+        font-size: 14px;
+        color: #666666;
+        margin-top: 5px;
+    }
+    
+    .india-highlight {
+        background: linear-gradient(135deg, rgba(242, 73, 15, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%);
+        padding: 25px;
+        border-radius: 12px;
+        border-left: 4px solid #f2490f;
+        margin-top: 20px;
+    }
+    
+    .india-highlight p {
+        margin: 0;
+        color: #333;
+        line-height: 1.6;
+        font-size: 15px;
+    }
+    
+    @keyframes pulse-box {
+        0%, 100% { transform: translateY(-50%) scale(1); opacity: 0.8; }
+        50% { transform: translateY(-50%) scale(1.1); opacity: 1; }
+    }
+    
+    /* World Presence Section */
+    .world-presence-section {
+        position: relative;
+        padding: 100px 0;
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    }
+    
+    .pattern-layer-world {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        background-repeat: repeat;
+        opacity: 0.04;
+        z-index: 0;
+    }
+    
+    .world-presence-section .auto-container {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .world-map-container {
+        margin-top: 60px;
+    }
+    
+    .world-map-wrapper {
+        position: relative;
+        background: transparent;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    .world-leaflet-map {
+        width: 100%;
+        height: 650px;
+        border-radius: 0;
+        z-index: 1;
+    }
+    
+    .world-stats {
+        padding-left: 30px;
+    }
+    
+    .world-presence-highlight {
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        border-top: 4px solid #f2490f;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    
+    .world-presence-highlight h3 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #120600;
+        margin-bottom: 30px;
+    }
+    
+    .world-stat-item {
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 2px dashed #e0e0e0;
+    }
+    
+    .world-stat-number {
+        font-size: 42px;
+        font-weight: 700;
+        color: #f2490f;
+        line-height: 1;
+    }
+    
+    .world-stat-label {
+        font-size: 16px;
+        font-weight: 600;
+        color: #120600;
+        margin-top: 8px;
+    }
+    
+    .region-group {
+        margin-bottom: 25px;
+    }
+    
+    .region-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #120600;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .region-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .region-list li {
+        font-size: 14px;
+        color: #555;
+        padding: 8px 0;
+        display: flex;
+        align-items: center;
+    }
+    
+    .region-marker {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: #f2490f;
+        border-radius: 50%;
+        margin-right: 12px;
+        animation: markerPulse 1.5s ease-in-out infinite;
+    }
+    
+    .region-list li:nth-child(1) .region-marker { animation-delay: 0s; }
+    .region-list li:nth-child(2) .region-marker { animation-delay: 0.2s; }
+    .region-list li:nth-child(3) .region-marker { animation-delay: 0.4s; }
+    .region-list li:nth-child(4) .region-marker { animation-delay: 0.6s; }
+    .region-list li:nth-child(5) .region-marker { animation-delay: 0.8s; }
+    .region-list li:nth-child(6) .region-marker { animation-delay: 1s; }
+    .region-list li:nth-child(7) .region-marker { animation-delay: 1.2s; }
+    
+    .world-highlight-text {
+        margin-top: 20px;
+    }
+    
+    .world-highlight-text p {
+        margin: 0;
+        color: #555;
+        line-height: 1.6;
+        font-size: 14px;
+    }
+    
+    @keyframes markerPulse {
+        0%, 100% { opacity: 0.6; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.4); }
+    }
+    
+    /* Original Styles */
+    .global-presence-section .location-block .inner-box {
+        min-height: 240px;
+    }
+
+    .global-presence-point {
+        display: block;
+        margin-top: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #f2490f;
+    }
+
+    .global-presence-map-image {
+        width: 100%;
+        max-width: 920px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .global-presence-cta .inner-container {
+        max-width: 760px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+        .hero-banner-title {
+            font-size: 45px;
+        }
+        
+        .hero-banner-subtitle {
+            font-size: 18px;
+        }
+        
+        .india-stats {
+            padding-left: 0;
+            margin-top: 40px;
+        }
+        
+        .world-stats {
+            padding-left: 0;
+            margin-top: 40px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .hero-banner-section {
+            min-height: 400px;
+        }
+        
+        .hero-banner-title {
+            font-size: 32px;
+        }
+        
+        .hero-banner-subtitle {
+            font-size: 16px;
+        }
+        
+        .world-map-wrapper {
+            padding: 0;
+        }
+        
+        .world-presence-highlight,
+        .india-highlight {
+            padding: 20px;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+<div class="cursor"></div>
+
+<!-- PageWrapper -->
+<div class="page-wrapper">
+
+	<!-- Preloader -->
+	<div class="loader-wrap">
+		<div class="preloader">
+			<div class="preloader-close">x</div>
+			<div id="handle-preloader" class="handle-preloader">
+				<div class="animation-preloader">
+					<div class="spinner"></div>
+					<div class="txt-loading">
+						<span data-text-preloader="F" class="letters-loading">
+							F
+						</span>
+						<span data-text-preloader="I" class="letters-loading">
+							I
+						</span>
+						<span data-text-preloader="N" class="letters-loading">
+							N
+						</span>
+						<span data-text-preloader="O" class="letters-loading">
+							O
+						</span>
+						<span data-text-preloader="L" class="letters-loading">
+							L
+						</span>
+						<span data-text-preloader="U" class="letters-loading">
+							U
+						</span>
+						<span data-text-preloader="B" class="letters-loading">
+							B
+						</span>
+						<span data-text-preloader="E" class="letters-loading">
+							E
+						</span>
+					</div>
+				</div>  
+			</div>
+		</div>
+	</div>
+	<!-- Preloader End -->
+ 	
+	<!-- scrollToTop start -->
+	<div class="progress-wrap active-progress">
+		<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+		<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919px, 307.919px; stroke-dashoffset: 228.265px;"></path>
+		</svg>
+	</div>
+	<!-- scrollToTop end -->
+	
+    <header class="main-header">
+    	
+		<!-- Header Top -->
+        <div class="header-top">
+            <div class="auto-container">
+                <div class="clearfix">
+					<!-- Top Left -->
+					<div class="top-left">
+						<div class="text">Welcome to <a href="#">Finolube</a>, Growing Together.</div>
+					</div>
+					
+					<!-- Top Right -->
+                    <div class="top-right pull-right">
+						<div class="clock">Open: Mon - Sat 8:00 - 18:00</div>
+						<div class="social-box">
+							<a href="#" class="fa fa-facebook"></a>
+							<a href="#" class="fa fa-twitter"></a>
+							<a href="#" class="fa fa-dribbble"></a>
+							<a href="#" class="fa fa-behance"></a>
+						</div>
+                    </div>
+					
+                </div>
+            </div>
+        </div>
+		
+		<!-- Header Upper -->
+        <div class="header-upper">
+            <div class="auto-container">
+                <div class="clearfix">
+                    
+                    <div class="pull-left logo-box">
+                        <div class="logo"><a href="index.html"><img src="images/finolube-logo.png" alt="" title="Finolube"></a></div>
+                    </div>
+                    
+                    <div class="pull-right upper-right clearfix">
+                        
+                        <!--Info Box-->
+                        <div class="upper-column info-box">
+                            <div class="icon-box"><span class="flaticon-telephone"></span></div>
+                            <ul>
+                                <li><strong>Call Customer Care</strong></li>
+                                <li>+91 7226016057</li>
+                            </ul>
+                        </div>
+                        
+                        <!--Info Box-->
+                        <div class="upper-column info-box">
+                            <div class="icon-box"><span class="flaticon-placeholder"></span></div>
+                            <ul>
+                                <li><strong>+91 7226016057</strong></li>
+                                <li>Plot No. 25, Odhav Farm, Vapi - 396195</li>
+                            </ul>
+                        </div>
+						
+						<!--Info Box-->
+                        <div class="upper-column info-box">
+                            <div class="icon-box"><span class="flaticon-message"></span></div>
+                            <ul>
+                                <li><strong>Mail Us</strong></li>
+                                <li>finolube@gmail.com</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- End Header Upper -->
+		
+		<!-- Header Upper -->
+        <div class="header-lower">
+        	<div class="auto-container">
+				<div class="inner-container clearfix">
+            	
+					<div class="nav-outer">
+						<!-- Mobile Navigation Toggler -->
+						<div class="mobile-nav-toggler"><span class="icon flaticon-menu-3"></span></div>
+						<!-- Main Menu -->
+						<nav class="main-menu navbar-expand-md">
+							<div class="navbar-header">
+								<!-- Toggle Button -->    	
+								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div>
+							
+							<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+								<ul class="navigation clearfix">
+									<li class="current"><a href="index.html">Home</a></li>
+									<li><a href="about.html">About Us</a></li>
+									<li class="dropdown products-menu"><a href="products-categories.html">Products</a>
+										<ul>
+											<li><a href="bike-engine-oils.html">Bike Engine Oils</a></li>
+											<li><a href="fork-oil.html">Fork Oil</a></li>
+											<li><a href="brake-clutch-fluid.html">Brake & Clutch Fluid</a></li>
+											<li><a href="car-engine-oils.html">Car Engine Oils</a></li>
+											<li><a href="coolants.html">Coolants</a></li>
+											<li><a href="truck-engine-oils.html">Truck Engine Oils</a></li>
+											<li><a href="tractor-engine-oils.html">Tractor Engine Oils</a></li>
+											<li><a href="gear-oils.html">Gear Oils</a></li>
+											<li><a href="aerosols-car-care.html">Aerosols & Car Care</a></li>
+											<li><a href="cng-engine-oil.html">Cng Engine Oil</a></li>
+											<li><a href="industrial-lubricants.html">Industrial Lubricants</a></li>
+											<li><a href="grease.html">Grease</a></li>
+										</ul>
+									</li>
+									<li><a href="global-presence.html">Global Presence</a></li>
+									<li><a href="contact.html">Contact Us</a></li>
+									<li><a href="Finolube%20Brochure.pdf" download>Download Brochure</a></li>
+								</ul>
+							</div>
+						</nav>
+						
+						<!-- Main Menu End-->
+						<div class="outer-box clearfix">
+							
+							<!-- Search Btn -->
+							<div class="search-box-btn search-box-outer"><span class="icon flaticon-loupe"></span></div>
+							
+						</div>
+					</div>
+					
+				</div>
+            </div>
+        </div>
+        <!--End Header Upper-->
+        
+		<!-- Sticky Header  -->
+        <div class="sticky-header">
+            <div class="auto-container clearfix">
+                <!--Logo-->
+                <div class="logo pull-left">
+                    <a href="index.html" title=""><img src="images/finolube-logo.png" alt="" title="Finolube"></a>
+                </div>
+                <!--Right Col-->
+                <div class="pull-right">
+                    <!-- Main Menu -->
+                    <nav class="main-menu">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+						
+                    </nav><!-- Main Menu End-->
+					
+					<!-- Mobile Navigation Toggler -->
+					<div class="mobile-nav-toggler"><span class="icon flaticon-menu-3"></span></div>
+					
+                </div>
+            </div>
+        </div><!-- End Sticky Menu -->
+    
+		<!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon fa fa-close"></span></div>
+            
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="index.html"><img src="images/finolube-logo.png" alt="" title="Finolube"></a></div>
+                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+            </nav>
+        </div><!-- End Mobile Menu -->
+	
+    </header>
+    <!-- End Main Header -->
+	
+	<!-- Hero Banner -->
+    <section class="page-title hero-banner-section" style="background-image: url(images/background/4.jpg)">
+		<div class="animated-overlay"></div>
+        <div class="auto-container">
+			<ul class="bread-crumb clearfix">
+				<li><a href="index.html">Home</a></li>
+				<li>Global Presence</li>
+			</ul>
+			<h2 class="hero-banner-title">Finolube Global Presence</h2>
+			<p class="hero-banner-subtitle">Expanding Across Continents with Trusted Quality</p>
+        </div>
+    </section>
+    <!-- End Hero Banner -->
+	
+	<!-- Global Presence Section -->
+	<section class="contact-page-section global-presence-section">
+		<div class="auto-container">
+			<div class="sec-title-three centered">
+				<h2>Growing Across Markets</h2>
+				<div class="text">Finolube supports distributors, retailers and fleet customers across multiple geographies with reliable lubricant supply.</div>
+			</div>
+			
+			<div class="row clearfix">
+				<div class="location-block col-lg-3 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="content">
+							<span class="icon flaticon-world-1"></span>
+							<strong>India</strong>
+							Primary manufacturing and core distribution network
+						</div>
+						<span class="global-presence-point">1000+ partners</span>
+					</div>
+				</div>
+				
+				<div class="location-block col-lg-3 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1500ms">
+						<div class="content">
+							<span class="icon flaticon-project-management"></span>
+							<strong>Middle East</strong>
+							Channel support for automotive and industrial needs
+						</div>
+						<span class="global-presence-point">Regional dispatch</span>
+					</div>
+				</div>
+				
+				<div class="location-block col-lg-3 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+						<div class="content">
+							<span class="icon flaticon-oil"></span>
+							<strong>Africa</strong>
+							Export-ready packs for independent distributors
+						</div>
+						<span class="global-presence-point">Bulk + retail SKUs</span>
+					</div>
+				</div>
+				
+				<div class="location-block col-lg-3 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+						<div class="content">
+							<span class="icon flaticon-maintenance"></span>
+							<strong>Asia Pacific</strong>
+							Targeted expansion through strategic distribution tie-ups
+						</div>
+						<span class="global-presence-point">Fast onboarding</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Global Presence Section -->
+	
+	<!-- India Presence Section -->
+	<section class="india-presence-section">
+		<div class="pattern-layer-india" style="background-image:url(images/background/pattern-3.png)"></div>
+		<div class="auto-container">
+			<div class="sec-title-three centered">
+				<h2>Growing Strong in India</h2>
+				<div class="text">Building a robust distribution network across the nation</div>
+			</div>
+			
+			<div class="india-map-container">
+				<div class="row clearfix">
+					<div class="map-col col-lg-7 col-md-12">
+						<div class="india-map-wrapper wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+							<div id="india-map" class="india-leaflet-map"></div>
+						</div>
+					</div>
+					
+					<div class="stats-col col-lg-5 col-md-12">
+						<div class="india-stats wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+							<div class="stat-item stat-item-1">
+								<div class="stat-number">25</div>
+								<div class="stat-label">Indian States</div>
+								<div class="stat-description">Direct coverage across diverse regions</div>
+							</div>
+							
+							<div class="stat-item stat-item-2">
+								<div class="stat-number">6</div>
+								<div class="stat-label">Union Territories</div>
+								<div class="stat-description">Extended reach to all corners</div>
+							</div>
+							
+							<div class="stat-item stat-item-3">
+								<div class="stat-number">250+</div>
+								<div class="stat-label">Distributors Network</div>
+								<div class="stat-description">Strong supply chain partnership</div>
+							</div>
+							
+							<div class="india-highlight">
+								<p><strong>Prime Distribution Hub:</strong> Finolube maintains strategic distribution centers across northern, southern, eastern, and western India, ensuring rapid delivery and consistent availability of premium lubricants to all corners of the nation.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End India Presence Section -->
+	
+	<!-- World Presence Section -->
+	<section class="world-presence-section">
+		<div class="pattern-layer-world" style="background-image:url(images/background/pattern-29.png)"></div>
+		<div class="auto-container">
+			<div class="sec-title-three centered">
+				<h2>Global Reach</h2>
+				<div class="text">Extending Excellence Worldwide</div>
+			</div>
+			
+			<div class="world-map-container">
+				<div class="row clearfix">
+					<div class="world-map-col col-lg-8 col-md-12">
+						<div class="world-map-wrapper wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+							<div id="world-map" class="world-leaflet-map"></div>
+						</div>
+					</div>
+					
+					<div class="world-stats-col col-lg-4 col-md-12">
+						<div class="world-stats wow fadeInRight" data-wow-delay="300ms" data-wow-duration="1500ms">
+							<div class="world-presence-highlight">
+								<h3>Global Footprint</h3>
+								
+								<div class="world-stat-item">
+									<div class="world-stat-number">28+</div>
+									<div class="world-stat-label">Countries Worldwide</div>
+								</div>
+								
+								<div class="region-group">
+									<h4 class="region-title">Key Markets</h4>
+									<ul class="region-list">
+										<li><span class="region-marker"></span>Middle East</li>
+										<li><span class="region-marker"></span>South Asia</li>
+										<li><span class="region-marker"></span>Southeast Asia</li>
+										<li><span class="region-marker"></span>Europe</li>
+										<li><span class="region-marker"></span>Africa</li>
+										<li><span class="region-marker"></span>Americas</li>
+										<li><span class="region-marker"></span>Oceania</li>
+									</ul>
+								</div>
+								
+								<div class="world-highlight-text">
+									<p>Finolube extends its premium lubricant portfolio across continents, serving automotive, industrial, and commercial sectors with the same commitment to quality and reliability that defines our brand globally.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End World Presence Section -->
+	
+	<!-- Global Presence CTA -->
+    <div class="contact-form-section global-presence-cta">
+		<div class="pattern-layer" style="background-image:url(images/background/pattern-25.png)"></div>
+    	<div class="auto-container">
+			<div class="sec-title alternate centered">
+				<div class="title">Become a Partner</div>
+				<h2>Looking to expand Finolube in your market?</h2>
+				<div class="text">Connect with our team for pricing, product catalogues and onboarding support for your territory.</div>
+			</div>
+			<div class="inner-container">
+				<a href="contact.html#contact-form-section" class="theme-btn btn-style-eight clearfix">
+					<span class="btn-wrap">
+						<span class="text-one">Start Distributor Enquiry</span>
+						<span class="text-two">Start Distributor Enquiry</span>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- End Global Presence CTA -->
+	
+	<!-- Main Footer -->
+	<footer class="main-footer" style="background-image:url(images/background/pattern-12.png)">
+		<div class="auto-container">
+			<!-- Widgets Section -->
+			<div class="widgets-section">
+				<div class="row clearfix">
+					
+					<!-- Big Column -->
+					<div class="big-column col-lg-6 col-md-12 col-sm-12">
+						<div class="row clearfix">
+							
+							<!-- Footer Column -->
+							<div class="footer-column col-lg-6 col-md-6 col-sm-12">
+								<div class="footer-widget logo-widget">
+									<div class="logo">
+										<a href="index.html"><img src="images/finolube-logo.png" alt="" /></a>
+									</div>
+									<div class="text">Finolube blends selected base oils and imported additives to deliver world-class lubricants.</div>
+									<a href="about.html" class="theme-btn about-btn">About us</a>
+								</div>
+							</div>
+							
+							<!-- Footer Column -->
+							<div class="footer-column col-lg-6 col-md-6 col-sm-12">
+								<div class="footer-widget newsletter-widget">
+									<h4>Newsletter</h4>
+									<div class="text">Subscribe for product launches, technical guidance and distributor updates</div>
+									
+									<!-- Email Box -->
+									<div class="email-box">
+										<form method="post" action="contact.html">
+											<div class="form-group">
+												<input type="email" name="search-field" value="" placeholder="Your mail address" required>
+												<button type="submit"><span class="icon flaticon-send"></span></button>
+											</div>
+										</form>
+									</div>
+									
+									<!-- Social Box -->
+									<ul class="social-box">
+										<li><a href="#" class="fa fa-facebook-f"></a></li>
+										<li><a href="#" class="fa fa-twitter"></a></li>
+										<li><a href="#" class="fa fa-dribbble"></a></li>
+										<li><a href="#" class="fa fa-behance"></a></li>
+									</ul>
+									<!-- End Social Box -->
+									
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+					<!-- Big Column -->
+					<div class="big-column col-lg-6 col-md-12 col-sm-12">
+						<div class="row clearfix">
+							
+							<!-- Footer Column -->
+							<div class="footer-column col-lg-6 col-md-6 col-sm-12">
+								<div class="footer-widget contact-widget">
+									<h4>Official info:</h4>
+									<ul class="contact-list">
+										<li><span class="icon fa fa-phone"></span> Plot No. 25, Odhav Farm <br> Motapondha Road, Vapi - 396195</li>
+										<li><span class="icon fa fa-envelope"></span> +91 7226016057</li>
+									</ul>
+									<div class="timing">
+										<strong>Open Hours: </strong>
+										Mon - Sat: 8 am - 5 pm, <br> Sunday: CLOSED
+									</div>
+								</div>
+							</div>
+							
+							<!-- Footer Column -->
+							<div class="footer-column col-lg-6 col-md-6 col-sm-12">
+								<div class="footer-widget instagram-widget">
+									<h4>instagram</h4>
+									<div class="widget-content">
+										<div class="images-outer clearfix">
+											<!--Image Box-->
+											<figure class="image-box"><a class="lightbox-image" href="images/gallery/1.jpg"><img src="images/gallery/footer-gallery-thumb-1.jpg" alt=""></a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a class="lightbox-image" href="images/gallery/1.jpg"><img src="images/gallery/footer-gallery-thumb-2.jpg" alt=""></a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a class="lightbox-image" href="images/gallery/1.jpg"><img src="images/gallery/footer-gallery-thumb-3.jpg" alt=""></a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a class="lightbox-image" href="images/gallery/1.jpg"><img src="images/gallery/footer-gallery-thumb-4.jpg" alt=""></a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a class="lightbox-image" href="images/gallery/1.jpg"><img src="images/gallery/footer-gallery-thumb-5.jpg" alt=""></a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a class="lightbox-image" href="images/gallery/1.jpg"><img src="images/gallery/footer-gallery-thumb-6.jpg" alt=""></a></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="footer-bottom">
+				<div class="copyright">&copy; 2026 Finolube - All rights reserved.</div>
+			</div>
+			
+		</div>
+	</footer>
+	<!-- End Main Footer -->
+	
+</div>
+<!-- End Page Wrapper -->
+
+<script src="js/jquery.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/magnific-popup.min.js"></script>
+<script src="js/validate.js"></script>
+<script src="js/backToTop.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/cursor-script.js"></script>
+<script src="js/script.js"></script>
+
+<!-- Leaflet Map JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
+<script>
+	// Initialize India Map
+	var indiaMap = L.map('india-map').setView([20.593683, 78.962883], 5);
+	
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '© OpenStreetMap contributors',
+		maxZoom: 19
+	}).addTo(indiaMap);
+	
+	// India Distribution Points (25 States + 6 Union Territories)
+	var indiaPoints = [
+		// North India
+		{coords: [28.7041, 77.1025], name: 'Delhi (UT)', type: 'hub'},
+		{coords: [29.0588, 77.7846], name: 'Uttar Pradesh', type: 'state'},
+		{coords: [31.1471, 77.5771], name: 'Himachal Pradesh', type: 'state'},
+		{coords: [32.7266, 74.8570], name: 'Jammu & Kashmir (UT)', type: 'hub'},
+		{coords: [34.1526, 77.5771], name: 'Ladakh (UT)', type: 'hub'},
+		{coords: [30.7333, 76.8277], name: 'Punjab', type: 'state'},
+		
+		// East India
+		{coords: [28.1044, 86.9306], name: 'Bihar', type: 'state'},
+		{coords: [25.2645, 88.9137], name: 'West Bengal', type: 'state'},
+		{coords: [22.5726, 88.3639], name: 'Odisha', type: 'state'},
+		{coords: [23.3441, 85.3096], name: 'Jharkhand', type: 'state'},
+		
+		// West India
+		{coords: [23.0225, 72.5714], name: 'Gujarat', type: 'state'},
+		{coords: [19.0760, 72.8777], name: 'Maharashtra', type: 'hub'},
+		{coords: [19.7515, 73.3150], name: 'Daman & Diu (UT)', type: 'hub'},
+		{coords: [20.2961, 73.8130], name: 'Dadra & Nagar Haveli (UT)', type: 'hub'},
+		{coords: [22.2587, 71.1924], name: 'Rajasthan', type: 'state'},
+		
+		// South India
+		{coords: [15.2993, 75.7597], name: 'Karnataka', type: 'state'},
+		{coords: [13.0827, 80.2707], name: 'Tamil Nadu', type: 'hub'},
+		{coords: [10.8505, 76.2711], name: 'Kerala', type: 'state'},
+		{coords: [17.3850, 78.4867], name: 'Telangana', type: 'state'},
+		{coords: [15.9129, 78.6675], name: 'Andhra Pradesh', type: 'state'},
+		
+		// Central India
+		{coords: [22.9375, 78.6553], name: 'Madhya Pradesh', type: 'state'},
+		{coords: [23.1815, 79.9864], name: 'Chhattisgarh', type: 'state'},
+		
+		// Northeast India
+		{coords: [26.1445, 91.7362], name: 'Assam', type: 'state'},
+		{coords: [25.2854, 92.7789], name: 'Meghalaya', type: 'state'},
+		{coords: [24.6637, 93.9063], name: 'Manipur', type: 'state'},
+		
+		// Coastal Hubs
+		{coords: [19.2183, 72.9781], name: 'Goa', type: 'state'},
+		{coords: [11.8588, 79.8298], name: 'Puducherry (UT)', type: 'hub'},
+		{coords: [11.3410, 79.8277], name: 'Andaman & Nicobar (UT)', type: 'hub'}
+	];
+	
+	var orangeIcon = L.icon({
+		iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-ff7800.png',
+		shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	
+	indiaPoints.forEach(function(point) {
+		var marker = L.circleMarker(point.coords, {
+			radius: point.type === 'hub' ? 8 : 6,
+			fillColor: '#f2490f',
+			color: '#fff',
+			weight: 2,
+			opacity: 1,
+			fillOpacity: point.type === 'hub' ? 0.9 : 0.7
+		}).addTo(indiaMap);
+		
+		marker.bindPopup('<strong>' + point.name + '</strong><br>' + (point.type === 'hub' ? 'Distribution Hub' : 'Territory'));
+	});
+	
+	// Initialize World Map
+	var worldMap = L.map('world-map').setView([20, 0], 2);
+	
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '© OpenStreetMap contributors',
+		maxZoom: 19
+	}).addTo(worldMap);
+	
+	// Global presence locations (28+ countries)
+	var globalPoints = [
+		// Asia
+		{coords: [20.5937, 78.9629], name: 'India', type: 'primary'},
+		{coords: [23.6345, 102.5528], name: 'Thailand'},
+		{coords: [6.9271, 107.6411], name: 'Indonesia'},
+		{coords: [10.3157, 103.8439], name: 'Cambodia'},
+		{coords: [15.8700, 100.9925], name: 'Laos'},
+		{coords: [13.7944, 100.9789], name: 'Vietnam'},
+		
+		// Middle East
+		{coords: [24.4539, 54.3773], name: 'UAE'},
+		{coords: [29.5086, 35.5577], name: 'Saudi Arabia'},
+		{coords: [31.9454, 35.9284], name: 'Jordan'},
+		{coords: [32.4279, 53.6880], name: 'Iran'},
+		
+		// Africa
+		{coords: [-22.9375, 24.6849], name: 'Botswana'},
+		{coords: [-17.8252, 34.3021], name: 'Malawi'},
+		{coords: [-15.3875, 28.3228], name: 'Zambia'},
+		{coords: [-11.2027, 17.8739], name: 'Angola'},
+		{coords: [-1.9536, 29.8739], name: 'Uganda'},
+		{coords: [9.0070, 7.0889], name: 'Nigeria'},
+		
+		// Europe
+		{coords: [46.8182, 8.2275], name: 'Switzerland'},
+		{coords: [48.3794, 31.1656], name: 'Ukraine'},
+		{coords: [51.1694, 10.4515], name: 'Germany'},
+		{coords: [55.3781, 3.4360], name: 'UK'},
+		{coords: [41.8719, 12.5674], name: 'Italy'},
+		
+		// Americas
+		{coords: [45.4215, -75.6972], name: 'Canada'},
+		{coords: [37.7749, -122.4194], name: 'USA'},
+		{coords: [-23.5505, -46.6333], name: 'Brazil'},
+		{coords: [-33.8688, 151.2093], name: 'Australia'},
+		
+		// Additional Markets
+		{coords: [34.8516, 9.7631], name: 'Tunisia'},
+		{coords: [-24.6282, 25.9245], name: 'South Africa'},
+		{coords: [42.7339, 21.1658], name: 'Kosovo'},
+	];
+	
+	globalPoints.forEach(function(point, index) {
+		var isHub = point.type === 'primary';
+		var marker = L.circleMarker(point.coords, {
+			radius: isHub ? 10 : 6,
+			fillColor: '#f2490f',
+			color: '#fff',
+			weight: 2,
+			opacity: 1,
+			fillOpacity: isHub ? 1 : 0.7
+		}).addTo(worldMap);
+		
+		marker.bindPopup('<strong>' + point.name + '</strong><br>' + (isHub ? 'Primary Market' : 'Market'));
+	});
+	
+	// Prevent map scrolling with page scroll
+	indiaMap.scrollWheelZoom.disable();
+	worldMap.scrollWheelZoom.disable();
+</script>
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+</body>
+</html>
+
+
+
+

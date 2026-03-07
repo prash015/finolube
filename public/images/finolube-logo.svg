@@ -1,0 +1,64 @@
+<svg width="300" height="96" viewBox="0 0 1000 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="finolubeTitle finolubeDesc">
+  <title id="finolubeTitle">Finolube logo</title>
+  <desc id="finolubeDesc">Finolube wordmark with red gear and flame mark, with Growing Together tagline.</desc>
+
+  <g transform="translate(334 146)">
+    <g fill="#eb1b2b">
+      <rect x="-6" y="-138" width="12" height="26" rx="2"/>
+      <rect x="-6" y="112" width="12" height="26" rx="2"/>
+      <rect x="112" y="-6" width="26" height="12" rx="2"/>
+      <rect x="-138" y="-6" width="26" height="12" rx="2"/>
+      <rect x="-6" y="-138" width="12" height="26" rx="2" transform="rotate(30)"/>
+      <rect x="-6" y="-138" width="12" height="26" rx="2" transform="rotate(60)"/>
+      <rect x="-6" y="-138" width="12" height="26" rx="2" transform="rotate(120)"/>
+      <rect x="-6" y="-138" width="12" height="26" rx="2" transform="rotate(150)"/>
+      <rect x="-6" y="-138" width="12" height="26" rx="2" transform="rotate(210)"/>
+      <rect x="-6" y="-138" width="12" height="26" rx="2" transform="rotate(240)"/>
+      <rect x="-6" y="-138" width="12" height="26" rx="2" transform="rotate(300)"/>
+      <rect x="-6" y="-138" width="12" height="26" rx="2" transform="rotate(330)"/>
+    </g>
+    <circle r="108" fill="#eb1b2b"/>
+    <circle r="82" fill="#ffffff"/>
+  </g>
+
+  <polygon points="20,102 832,102 902,112 902,160 832,170 20,170" fill="#ffffff"/>
+
+  <path d="M20 106 L312 102" stroke="#eb1b2b" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M20 168 L312 173" stroke="#eb1b2b" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+  <path d="M315 82 C430 55 638 73 900 90" stroke="#222328" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <path d="M315 190 C438 220 645 208 900 188" stroke="#222328" stroke-width="12" fill="none" stroke-linecap="round"/>
+
+  <g transform="translate(334 146)">
+    <g fill="#222328">
+      <rect x="-6" y="-62" width="12" height="15" rx="1"/>
+      <rect x="-6" y="47" width="12" height="15" rx="1"/>
+      <rect x="47" y="-6" width="15" height="12" rx="1"/>
+      <rect x="-62" y="-6" width="15" height="12" rx="1"/>
+      <rect x="-6" y="-62" width="12" height="15" rx="1" transform="rotate(30)"/>
+      <rect x="-6" y="-62" width="12" height="15" rx="1" transform="rotate(60)"/>
+      <rect x="-6" y="-62" width="12" height="15" rx="1" transform="rotate(120)"/>
+      <rect x="-6" y="-62" width="12" height="15" rx="1" transform="rotate(150)"/>
+      <rect x="-6" y="-62" width="12" height="15" rx="1" transform="rotate(210)"/>
+      <rect x="-6" y="-62" width="12" height="15" rx="1" transform="rotate(240)"/>
+      <rect x="-6" y="-62" width="12" height="15" rx="1" transform="rotate(300)"/>
+      <rect x="-6" y="-62" width="12" height="15" rx="1" transform="rotate(330)"/>
+    </g>
+    <circle r="51" fill="#222328"/>
+    <circle r="36" fill="#ffffff"/>
+
+    <path d="M0 -70 C35 -58 62 -37 74 -8" stroke="#222328" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M0 70 C35 58 62 37 74 8" stroke="#222328" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+    <path d="M1 -48 C26 -17 25 1 8 24 C-15 53 -50 34 -43 4 C-39 -16 -25 -23 -20 -39 C-17 -51 -20 -62 -29 -72 C-8 -61 -1 -53 1 -48 Z" fill="#eb1b2b"/>
+    <path d="M-4 -34 C5 -19 5 -5 -3 5 C-14 18 -25 10 -21 -1 C-18 -8 -13 -12 -10 -18 C-8 -24 -9 -30 -15 -37 C-10 -35 -6 -34 -4 -34 Z" fill="#ffffff"/>
+  </g>
+
+  <g fill="#222328" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" letter-spacing="1.2">
+    <text x="14" y="172" font-size="176">FIN</text>
+    <text x="438" y="172" font-size="176">LUBE</text>
+  </g>
+
+  <text x="922" y="92" fill="#222328" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="600">®</text>
+  <text x="525" y="258" fill="#2f3238" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="700">Growing Together.....</text>
+</svg>

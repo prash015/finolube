@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Finolube | Industrial & Specialty Fluids</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link href="css/custom-nav.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<style>
+/* Modern Animations and Styles */
+.category-hero {
+	position: relative;
+	padding: 150px 0;
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+}
+
+.category-hero::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+}
+
+.category-hero-content {
+	position: relative;
+	z-index: 2;
+	color: white;
+	animation: slideUpFade 0.8s ease-out;
+}
+
+.category-hero h1 {
+	font-size: 60px;
+	font-weight: 700;
+	margin-bottom: 20px;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.category-hero p {
+	font-size: 20px;
+	margin-bottom: 30px;
+	line-height: 1.6;
+	max-width: 700px;
+}
+
+@keyframes slideUpFade {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.content-section {
+	padding: 80px 0;
+}
+
+.content-section h2 {
+	font-size: 45px;
+	margin-bottom: 20px;
+	color: #333;
+}
+
+.content-section p {
+	font-size: 18px;
+	line-height: 1.8;
+	color: #666;
+	margin-bottom: 20px;
+}
+
+.features-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 30px;
+	margin: 50px 0;
+}
+
+.feature-card {
+	background: #f9f9f9;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	animation: fadeInUp 0.6s ease-out;
+}
+
+.feature-card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.feature-card h3 {
+	color: var(--main-color);
+	margin-bottom: 15px;
+	font-size: 22px;
+}
+
+.feature-card p {
+	color: #666;
+	font-size: 16px;
+	margin: 0;
+}
+
+.products-showcase {
+	background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+	padding: 60px 0;
+	margin: 50px 0;
+}
+
+.product-table {
+	width: 100%;
+	border-collapse: collapse;
+	background: white;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.product-table thead {
+	background: var(--main-color);
+	color: white;
+}
+
+.product-table th, .product-table td {
+	padding: 15px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
+.product-table tbody tr:hover {
+	background: #f9f9f9;
+}
+
+.cta-banner {
+	background: var(--main-color);
+	color: white;
+	padding: 60px 0;
+	text-align: center;
+	margin: 60px 0;
+	border-radius: 8px;
+}
+
+.cta-banner h2 {
+	color: white;
+	margin-bottom: 20px;
+}
+
+.cta-banner a {
+	background: white;
+	color: var(--main-color);
+	padding: 12px 30px;
+	border-radius: 4px;
+	text-decoration: none;
+	font-weight: 600;
+	display: inline-block;
+	transition: all 0.3s ease;
+}
+
+.cta-banner a:hover {
+	transform: scale(1.05);
+	box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.sidebar-image {
+	margin: 30px 0;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.sidebar-image img {
+	width: 100%;
+	height: auto;
+	display: block;
+	animation: zoomInSlow 10s ease-in-out infinite;
+}
+
+@keyframes zoomInSlow {
+	0%, 100% { transform: scale(1); }
+	50% { transform: scale(1.05); }
+}
+</style>
+
+</head>
+
+<body>
+<div class="cursor"></div>
+
+<!-- PageWrapper -->
+<div class="page-wrapper">
+ 	
+	<!-- Preloader -->
+	<div class="loader-wrap">
+		<div class="preloader">
+			<div class="preloader-close">x</div>
+			<div id="handle-preloader" class="handle-preloader">
+				<div class="animation-preloader">
+					<div class="spinner"></div>
+					<div class="txt-loading">
+						<span data-text-preloader="F" class="letters-loading">F</span>
+						<span data-text-preloader="I" class="letters-loading">I</span>
+						<span data-text-preloader="N" class="letters-loading">N</span>
+						<span data-text-preloader="O" class="letters-loading">O</span>
+						<span data-text-preloader="L" class="letters-loading">L</span>
+						<span data-text-preloader="U" class="letters-loading">U</span>
+						<span data-text-preloader="B" class="letters-loading">B</span>
+						<span data-text-preloader="E" class="letters-loading">E</span>
+					</div>
+				</div>  
+			</div>
+		</div>
+	</div>
+	<!-- Preloader End -->
+	
+	<!-- scrollToTop start -->
+	<div class="progress-wrap active-progress">
+		<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+		<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919px, 307.919px; stroke-dashoffset: 228.265px;"></path>
+		</svg>
+	</div>
+	<!-- scrollToTop end -->
+	
+    <header class="main-header">
+    	<!-- Header Top -->
+        <div class="header-top">
+            <div class="auto-container">
+                <div class="clearfix">
+					<div class="top-left">
+						<div class="text">Welcome to <a href="#">Finolube</a>, Growing Together.</div>
+					</div>
+					<div class="top-right pull-right">
+						<div class="clock">Open: Mon - Sat 8:00 - 18:00</div>
+						<div class="social-box">
+							<a href="#" class="fa fa-facebook"></a>
+							<a href="#" class="fa fa-twitter"></a>
+							<a href="#" class="fa fa-dribbble"></a>
+							<a href="#" class="fa fa-behance"></a>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<!-- Header Upper -->
+        <div class="header-upper">
+            <div class="auto-container">
+                <div class="clearfix">
+                    <div class="pull-left logo-box">
+                        <div class="logo"><a href="index.html"><img src="images/finolube-logo.png" alt="" title="Finolube"></a></div>
+                    </div>
+                    <div class="pull-right upper-right clearfix">
+                        <div class="upper-column info-box">
+                            <div class="icon-box"><span class="flaticon-telephone"></span></div>
+                            <ul>
+                                <li><strong>Call Customer Care</strong></li>
+                                <li>+91 7226016057</li>
+                            </ul>
+                        </div>
+                        <div class="upper-column info-box">
+                            <div class="icon-box"><span class="flaticon-placeholder"></span></div>
+                            <ul>
+                                <li><strong>+91 7226016057</strong></li>
+                                <li>Plot No. 25, Odhav Farm, Vapi - 396195</li>
+                            </ul>
+                        </div>
+						<div class="upper-column info-box">
+                            <div class="icon-box"><span class="flaticon-message"></span></div>
+                            <ul>
+                                <li><strong>Mail Us</strong></li>
+                                <li>finolube@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<!-- Header Lower -->
+        <div class="header-lower">
+        	<div class="auto-container">
+				<div class="inner-container clearfix">
+					<div class="nav-outer">
+						<div class="mobile-nav-toggler"><span class="icon flaticon-menu-3"></span></div>
+						<nav class="main-menu navbar-expand-md">
+							<div class="navbar-header">
+								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div>
+							<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+								<ul class="navigation clearfix">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="about.html">About Us</a></li>
+									<li class="dropdown products-menu"><a href="products-categories.html">Products</a>
+										<ul>
+											<li><a href="bike-engine-oils.html">Bike Engine Oils</a></li>
+											<li><a href="fork-oil.html">Fork Oil</a></li>
+											<li><a href="brake-clutch-fluid.html">Brake & Clutch Fluid</a></li>
+											<li><a href="car-engine-oils.html">Car Engine Oils</a></li>
+											<li><a href="coolants.html">Coolants</a></li>
+											<li><a href="truck-engine-oils.html">Truck Engine Oils</a></li>
+											<li><a href="tractor-engine-oils.html">Tractor Engine Oils</a></li>
+											<li><a href="gear-oils.html">Gear Oils</a></li>
+											<li><a href="aerosols-car-care.html">Aerosols & Car Care</a></li>
+											<li><a href="cng-engine-oil.html">Cng Engine Oil</a></li>
+											<li><a href="industrial-lubricants.html">Industrial Lubricants</a></li>
+											<li><a href="grease.html">Grease</a></li>
+										</ul>
+									</li>
+									<li><a href="global-presence.html">Global Presence</a></li>
+									<li><a href="contact.html">Contact Us</a></li>
+									<li><a href="Finolube%20Brochure.pdf" download>Download Brochure</a></li>
+								</ul>
+							</div>
+						</nav>
+						<div class="outer-box clearfix">
+							<div class="search-box-btn search-box-outer"><span class="icon flaticon-loupe"></span></div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+		
+		<!-- Sticky Header -->
+        <div class="sticky-header">
+            <div class="auto-container clearfix">
+                <div class="logo pull-left">
+                    <a href="index.html" title=""><img src="images/finolube-logo.png" alt="" title="Finolube"></a>
+                </div>
+                <div class="pull-right">
+                    <nav class="main-menu"></nav>
+					<div class="mobile-nav-toggler"><span class="icon flaticon-menu-3"></span></div>
+                </div>
+            </div>
+        </div>
+    
+		<!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon fa fa-close"></span></div>
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="index.html"><img src="images/finolube-logo.png" alt="" title="Finolube"></a></div>
+                <div class="menu-outer"></div>
+            </nav>
+        </div>
+	
+    </header>
+    <!-- End Main Header -->
+	
+	<!-- Hero Banner -->
+	<section class="page-title hero-banner-section" style="background-image: url(images/background/2.jpg)">
+		<div class="animated-overlay"></div>
+		<div class="auto-container">
+			<h2 class="hero-banner-title">Industrial & Specialty Fluids</h2>
+				<p class="hero-banner-subtitle">Advanced formulations for manufacturing, hydraulics, and specialized industrial applications worldwide.</p>
+		</div>
+	</section>
+	<!-- End Hero Banner -->
+
+	<!-- Main Content Section -->
+	<section class="content-section">
+		<div class="auto-container">
+			<div class="row clearfix">
+				<!-- Main Content -->
+				<div class="col-lg-8">
+					<h2>Specialized Solutions for Industry</h2>
+					<p>Finolube industrial and specialty fluids are engineered for diverse manufacturing and processing applications. Our comprehensive range includes hydraulic fluids, way oils, spindle oils, heat transfer fluids, and custom formulations to meet unique operational requirements.</p>
+					
+					<p>With decades of industrial experience, we understand the critical demands of manufacturing environments and provide fluids that optimize productivity, reduce downtime, and extend equipment life.</p>
+
+					<h3 style="margin-top: 40px; margin-bottom: 20px; color: #333;">Why Choose Finolube Industrial Fluids?</h3>
+					<div class="features-grid">
+						<div class="feature-card">
+							<h3>Exceptional Performance</h3>
+							<p>Formulated to meet rigorous industrial standards and specifications.</p>
+						</div>
+						<div class="feature-card">
+							<h3>Equipment Protection</h3>
+							<p>Anti-wear additives protect pumps, motors, and precision machinery.</p>
+						</div>
+						<div class="feature-card">
+							<h3>Thermal Stability</h3>
+							<p>Maintains viscosity and performance across wide temperature ranges.</p>
+						</div>
+						<div class="feature-card">
+							<h3>Extended Life</h3>
+							<p>Superior oxidation stability reduces fluid change intervals.</p>
+						</div>
+						<div class="feature-card">
+							<h3>Environmental Compliance</h3>
+							<p>Biodegradable options available for eco-conscious operations.</p>
+						</div>
+						<div class="feature-card">
+							<h3>Customization Available</h3>
+							<p>Tailored formulations for specific industrial applications.</p>
+						</div>
+					</div>
+
+					<h3 style="margin-top: 40px; margin-bottom: 20px; color: #333;">Product Categories</h3>
+					<div class="products-showcase">
+						<div class="auto-container">
+							<table class="product-table">
+								<thead>
+									<tr>
+										<th>Product Category</th>
+										<th>Typical Application</th>
+										<th>ISO Grade</th>
+										<th>Key Advantage</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><strong>Hydraulic Fluids</strong></td>
+										<td>Presses, Loaders, Excavators</td>
+										<td>ISO 46, 68</td>
+										<td>Superior Power Transmission</td>
+									</tr>
+									<tr>
+										<td><strong>Way Oils</strong></td>
+										<td>Machine Tools, CNC Centers</td>
+										<td>ISO 22, 32</td>
+										<td>Smooth Motion Control</td>
+									</tr>
+									<tr>
+										<td><strong>Heat Transfer Fluids</strong></td>
+										<td>Thermal Processing, Molding</td>
+										<td>Custom</td>
+										<td>Excellent Heat Conductivity</td>
+									</tr>
+									<tr>
+										<td><strong>Spindle Oils</strong></td>
+										<td>Precision Grinding, Boring</td>
+										<td>ISO 32, 46</td>
+										<td>Ultra-Fine Precision</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<h3 style="margin-top: 40px; margin-bottom: 20px; color: #333;">Industry Solutions</h3>
+					<p><strong>Textile Processing:</strong> Specialized lubrication for spinning, weaving, and finishing machinery to improve efficiency and reduce fabric damage.</p>
+					<p><strong>Metal Forming:</strong> Drawing, stamping, and forging fluids that provide superior tool life and surface finish while maintaining washability.</p>
+					<p><strong>Hydraulic Systems:</strong> Advanced anti-wear hydraulic fluids for construction, industrial, and utility equipment operating in demanding conditions.</p>
+					<p><strong>Custom Formulations:</strong> We work closely with industrial partners to develop tailored fluid solutions for unique processing requirements and operational challenges.</p>
+				</div>
+
+				<!-- Sidebar -->
+				<div class="col-lg-4">
+					<div class="sidebar-image">
+						<img src="images/background/2.jpg" alt="Industrial & Specialty Fluids" />
+					</div>
+					
+					<div class="cta-banner">
+						<h2>Optimize Your Operations</h2>
+						<p>Contact our technical team for fluid analysis, recommendations, and custom formulation services.</p>
+						<a href="contact.html">Contact Us Today</a>
+					</div>
+
+					<div style="background: #f0f0f0; padding: 25px; border-radius: 8px; margin-top: 30px;">
+						<h4 style="color: #333; margin-bottom: 15px;">Compliance & Certifications</h4>
+						<ul style="list-style: none; padding: 0; margin: 0;">
+							<li style="padding: 8px 0; border-bottom: 1px solid #ddd;"><strong>✓</strong> ISO 9001 Certified</li>
+							<li style="padding: 8px 0; border-bottom: 1px solid #ddd;"><strong>✓</strong> ISO 11158 & 11159</li>
+							<li style="padding: 8px 0; border-bottom: 1px solid #ddd;"><strong>✓</strong> DIN 51524 Standards</li>
+							<li style="padding: 8px 0; border-bottom: 1px solid #ddd;"><strong>✓</strong> ASHRAE Approved</li>
+							<li style="padding: 8px 0;"><strong>✓</strong> Environmentally Safe</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<!-- Footer Section -->
+	<footer class="main-footer" style="background-image:url(images/background/pattern-12.png)">
+		<div class="auto-container">
+			<div class="widgets-section">
+				<div class="row clearfix">
+					<div class="big-column col-lg-6 col-md-12 col-sm-12">
+						<div class="row clearfix">
+							<div class="footer-column col-lg-6 col-md-6 col-sm-12">
+								<div class="footer-widget logo-widget">
+									<div class="logo">
+										<a href="index.html"><img src="images/finolube-logo.png" alt="" /></a>
+									</div>
+									<div class="text">Finolube blends selected base oils and imported additives to deliver world-class lubricants.</div>
+									<a href="about.html" class="theme-btn about-btn">About us</a>
+								</div>
+							</div>
+							<div class="footer-column col-lg-6 col-md-6 col-sm-12">
+								<div class="footer-widget newsletter-widget">
+									<h4>Newsletter</h4>
+									<div class="text">Subscribe for product launches, technical guidance and distributor updates</div>
+									<div class="email-box">
+										<form method="post" action="contact.html">
+											<div class="form-group">
+												<input type="email" name="search-field" value="" placeholder="Your mail address" required>
+												<button type="submit"><span class="icon flaticon-send"></span></button>
+											</div>
+										</form>
+									</div>
+									<ul class="social-box">
+										<li><a href="#" class="fa fa-facebook-f"></a></li>
+										<li><a href="#" class="fa fa-twitter"></a></li>
+										<li><a href="#" class="fa fa-dribbble"></a></li>
+										<li><a href="#" class="fa fa-behance"></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="big-column col-lg-6 col-md-12 col-sm-12">
+						<div class="row clearfix">
+							<div class="footer-column col-lg-6 col-md-6 col-sm-12">
+								<div class="footer-widget contact-widget">
+									<h4>Official info:</h4>
+									<ul class="contact-list">
+										<li><span class="icon fa fa-phone"></span> Plot No. 25, Odhav Farm <br> Motapondha Road, Vapi - 396195</li>
+										<li><span class="icon fa fa-envelope"></span> +91 7226016057</li>
+									</ul>
+									<div class="timing">
+										<strong>Open Hours: </strong>
+										Mon - Sat: 8 am - 5 pm, <br> Sunday: CLOSED
+									</div>
+								</div>
+							</div>
+							<div class="footer-column col-lg-6 col-md-6 col-sm-12">
+								<div class="footer-widget instagram-widget">
+									<h4>instagram</h4>
+									<div class="widget-content">
+										<div class="images-outer clearfix">
+											<figure class="image-box"><a class="lightbox-image" href="images/gallery/1.jpg"><img src="images/gallery/footer-gallery-thumb-1.jpg" alt=""></a></figure>
+											<figure class="image-box"><a class="lightbox-image" href="images/gallery/1.jpg"><img src="images/gallery/footer-gallery-thumb-2.jpg" alt=""></a></figure>
+											<figure class="image-box"><a class="lightbox-image" href="images/gallery/1.jpg"><img src="images/gallery/footer-gallery-thumb-3.jpg" alt=""></a></figure>
+											<figure class="image-box"><a class="lightbox-image" href="images/gallery/1.jpg"><img src="images/gallery/footer-gallery-thumb-4.jpg" alt=""></a></figure>
+											<figure class="image-box"><a class="lightbox-image" href="images/gallery/1.jpg"><img src="images/gallery/footer-gallery-thumb-5.jpg" alt=""></a></figure>
+											<figure class="image-box"><a class="lightbox-image" href="images/gallery/1.jpg"><img src="images/gallery/footer-gallery-thumb-6.jpg" alt=""></a></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="copyright">&copy; 2026 Finolube - All rights reserved.</div>
+			</div>
+		</div>
+	</footer>
+
+	</div>
+	<!--End pagewrapper-->
+
+	<!-- Search Popup -->
+	<div class="search-popup">
+		<button class="close-search style-two"><span class="fa fa-remove"></span></button>
+		<button class="close-search"><span class="fa fa-arrow-up"></span></button>
+		<form method="post" action="blog.html">
+			<div class="form-group">
+				<input type="search" name="search-field" value="" placeholder="Search Here" required="">
+				<button type="submit"><i class="fa fa-search"></i></button>
+			</div>
+		</form>
+	</div>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/jquery.fancybox.js"></script>
+	<script src="js/owl.js"></script>
+	<script src="js/wow.js"></script>
+	<script src="js/validate.js"></script>
+	<script src="js/tilt.jquery.min.js"></script>
+	<script src="js/appear-2.js"></script>
+	<script src="js/parallax.min.js"></script>
+	<script src="js/jquery.paroller.min.js"></script>
+	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="js/magnific-popup.min.js"></script>
+	<script src="js/slick.js"></script>
+	<script src="js/mixitup.js"></script>
+	<script src="js/odometer.js"></script>
+	<script src="js/backToTop.js"></script>
+	<script src="js/appear.js"></script>
+	<script src="js/cursor-script.js"></script>
+	<script src="js/script.js"></script>
+
+</body>
+</html>

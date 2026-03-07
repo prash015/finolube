@@ -1,0 +1,24 @@
+
+<svg width="181" height="50" viewBox="0 0 181 50" xmlns="http://www.w3.org/2000/svg">
+  <rect width="181" height="50" fill="none"/>
+
+  <!-- Factory / ship icon -->
+  <g transform="translate(4,6) scale(0.45)">
+    <rect x="0" y="25" width="40" height="30" rx="4" fill="#ff5a1f"/>
+    <polygon points="40,25 55,15 55,55 40,55" fill="#ff5a1f"/>
+    <rect x="8" y="35" width="6" height="6" fill="white"/>
+    <rect x="18" y="35" width="6" height="6" fill="white"/>
+    <rect x="28" y="35" width="6" height="6" fill="white"/>
+    <rect x="18" y="10" width="6" height="15" fill="#ff5a1f"/>
+    <path d="M21 8 C23 5, 27 5, 29 8" stroke="#ff5a1f" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- Brand text -->
+  <text x="48" y="34"
+        font-family="Segoe UI, Arial, sans-serif"
+        font-size="26"
+        font-weight="700"
+        fill="#222">
+    indust<tspan fill="#ff5a1f">o</tspan>
+  </text>
+</svg>
